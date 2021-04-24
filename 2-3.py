@@ -19,4 +19,4 @@ setType1 = {1, 2, 3, 4}
 setType2 = {3, 4, 5, 6, 7, 8}
 
 
-unionset = setType1.union(setType2)
+unionset = setType1.union(setType2)  #합집합8hy

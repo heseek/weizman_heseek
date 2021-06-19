@@ -1,59 +1,37 @@
-# # # # # import tkinter as tk
-# # # # #
-# # # # # root = tk.Tk()
-# # # # #
-# # # # # labell = tk.Label(root, text="안녕하세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-# # # # # labell.pack()
-# # # # #
-# # # # # root.mainloop()
 # # # # import tkinter as tk
 # # # #
 # # # # root = tk.Tk()
-# # # # a = tk.Label(text="안녕")
-# # # # a.pack()
-# # # # a = tk.Label(text="+_+")
-# # # # a.pack()
-# # # # a = tk.Label(text="ㄴㅇㄱ")
-# # # # a.pack()
-# # # # a = tk.Label(text="ㅇ0ㅇ")
-# # # # a.pack()
-# # # # a = tk.Label(text="@_@")
-# # # # a.pack()
-# # # # a = tk.Label(text=";[")
-# # # # a.pack()
-# # # # a = tk.Label(text=":]")
-# # # # a.pack()
-# # # # a = tk.Label(text=";]")
-# # # # a.pack()
-# # # # a = tk.Label(text=":[")
-# # # # a.pack()
 # # # #
-# # # # b = tk.Entry()
-# # # # b.pack()
+# # # # labell = tk.Label(root, text="안녕하세요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+# # # # labell.pack()
 # # # #
 # # # # root.mainloop()
 # # # import tkinter as tk
 # # #
-# # #
-# # # def okClick():
-# # #     name = b.get()
-# # #     print(name)
-# # #     a.config(text=name)
-# # #
-# # #
 # # # root = tk.Tk()
-# # #
-# # # a = tk.Label(text="*")
+# # # a = tk.Label(text="안녕")
+# # # a.pack()
+# # # a = tk.Label(text="+_+")
+# # # a.pack()
+# # # a = tk.Label(text="ㄴㅇㄱ")
+# # # a.pack()
+# # # a = tk.Label(text="ㅇ0ㅇ")
+# # # a.pack()
+# # # a = tk.Label(text="@_@")
+# # # a.pack()
+# # # a = tk.Label(text=";[")
+# # # a.pack()
+# # # a = tk.Label(text=":]")
+# # # a.pack()
+# # # a = tk.Label(text=";]")
+# # # a.pack()
+# # # a = tk.Label(text=":[")
 # # # a.pack()
 # # #
 # # # b = tk.Entry()
 # # # b.pack()
 # # #
-# # # btn = tk.Button(root, text="1", command=okClick)
-# # # btn.pack()
-# # #
 # # # root.mainloop()
-# #
 # # import tkinter as tk
 # #
 # #
@@ -62,8 +40,6 @@
 # #     print(name)
 # #     a.config(text=name)
 # #
-# # def ret(event):
-# #     a.config(text='*')
 # #
 # # root = tk.Tk()
 # #
@@ -76,8 +52,32 @@
 # # btn = tk.Button(root, text="1", command=okClick)
 # # btn.pack()
 # #
-# # a.bind('<Button-1>', ret)
 # # root.mainloop()
+#
+# import tkinter as tk
+#
+#
+# def okClick():
+#     name = b.get()
+#     print(name)
+#     a.config(text=name)
+#
+# def ret(event):
+#     a.config(text='*')
+#
+# root = tk.Tk()
+#
+# a = tk.Label(text="*")
+# a.pack()
+#
+# b = tk.Entry()
+# b.pack()
+#
+# btn = tk.Button(root, text="1", command=okClick)
+# btn.pack()
+#
+# a.bind('<Button-1>', ret)
+# root.mainloop()
 #
 #
 # import tkinter as tk
@@ -95,4 +95,3 @@
 # b.pack()
 #
 # root.mainloop()
-asas

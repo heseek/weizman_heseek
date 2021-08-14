@@ -33,10 +33,21 @@ class Sa(pygame.sprite.Sprite):
         self.game = root
         self.move = 1
         # self.image = pygame.Surface((200, 50))
-        self.image = pygame.image.load('beetle.gif')
-        self.image = pygame.transform.scale(self.image, (200, 200))
-        # self.image.fill('red')
-        self.image_t = self.image
+        self.images = [pygame.image.load('모양 1.svg'),
+                       pygame.image.load('모양 2.svg'),
+                       pygame.image.load('모양 3.svg'),
+                       pygame.image.load('모양 4.svg'),
+                       pygame.image.load('모양 5.svg'),
+                       pygame.image.load('모양 6.svg'),
+                       pygame.image.load('모양 7.svg'),
+                       pygame.image.load('모양 8.svg'),
+                       pygame.image.load('모양 9.svg'),
+                       pygame.image.load('모양 10.svg'),
+                       pygame.image.load('모양 11.svg'),
+                       pygame.image.load('모양 12.svg'),
+                       pygame.image.load('모양 13.svg')]
+        self.index = 0
+        self.image = self.images[self.index]
         self.rect = self.image.get_rect()
         self.groups = self.game.all_sprites
         pygame.sprite.Sprite.__init__(self, self.groups)
@@ -45,12 +56,15 @@ class Sa(pygame.sprite.Sprite):
         self.angle = 0
         self.mask = self.image.get_masks()
         self.pos = pygame.math.Vector2(0, 0)
+        self.time = pygame.time.get_ticks()
 
     def update(self):
-        # self.angle += 1
-        self.image = pygame.transform.rotozoom(self.image_t, self.angle, 0.5)
-        self.image.set_colorkey((0, 0, 0))
-        self.rect = self.image.get_rect()
+        if pygame.time.get_ticks()-self.time> 100:
+            self.index += 1
+            self.time = pygame.time.get_ticks()
+        if self.index > len(self.images)-1:
+            self.index = 0
+        self.image = self.images[self.index]
         self.pos.x += 5
         if self.pos.x > Screen_x:
             self.pos.x = 0
@@ -92,7 +106,7 @@ class Game:
                 del rain
 
     def draw(self):
-        self.screen.fill((0, 0, 0))
+        self.screen.fill((255, 255, 255))
         self.all_sprites.draw(self.screen)
         for rain in self.rains:
             rain.draw()
